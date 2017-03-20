@@ -115,11 +115,11 @@
 						if(window.localStorage.menu)
 						{ 
 					//	var dataArray = window.localStorage.menu;
-						var dataArray = [{"id":28,"class":"Minecraft"}, {"id":56,"class":"Memes"}, {"id":89,"class":"Dashboard"}, {"id":89,"class":"Dashboard"}, {"id":89,"class":"Dashboard"}, {"id":89,"class":"Dashboard"}, {"id":89,"class":"Dashboard"}, {"id":89,"class":"Dashboard"}];
+						var dataArray = [{"id":"cube","class":"minecraft"}, {"id": 'gamepad',"class":"gaming"}, {"id":'dashboard',"class":"dashboard"}, {"id":89,"class":"Dashboard"}];
 						$(jQuery.parseJSON(JSON.stringify(dataArray))).each(function() {  
 						         var ID = this.id;
 						         var CLASS = this.class;
-						         var html = '<li><a href="#'.concat(CLASS).concat('">').concat(CLASS).concat('</a></li>');
+						         var html = '<li><a href="#'.concat(CLASS).concat('"><span class="icon fa-').concat(ID).concat('"></span></a></li>');
 						         $('#menu').append(html);
 						});
 
