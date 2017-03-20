@@ -111,14 +111,20 @@
      rS('jquery', '3.1.1', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', function(){
       
 			//Menu
-			window.localStorage.menu = true;
+			//window.localStorage.menu = true;
 						if(window.localStorage.menu)
 						{ 
-					//	var dataArray = window.localStorage.menu;
-						var dataArray = [{"id":"cube","class":"minecraft"}, {"id": 'gamepad',"class":"gaming"}, {"id":'dashboard',"class":"dashboard"}, {"id":89,"class":"Dashboard"}];
+						var dataArray = window.localStorage.menu;
+					//	var dataArray = [{"id":"cube","class":"minecraft", "v":1}, {"id": 'gamepad',"class":"gaming"}, {"id":'dashboard',"class":"dashboard"}, {"id":89,"class":"Dashboard"}];
 						$(jQuery.parseJSON(JSON.stringify(dataArray))).each(function() {  
 						         var ID = this.id;
 						         var CLASS = this.class;
+						         var V = this.v;
+						         var js = 'https://kbve.com/nfc/'.concat(CLASS).concat('/engine.js');				         
+						         rS(CLASS,V,js, function () { 
+						         	
+						         	});
+						         
 						         var html = '<li><a href="#'.concat(CLASS).concat('"><span class="icon fa-').concat(ID).concat('  fa-2x"></span></a></li>');
 						         $('#menu').append(html);
 						});
