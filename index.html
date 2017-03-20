@@ -119,7 +119,7 @@
 						$(jQuery.parseJSON(JSON.stringify(dataArray))).each(function() {  
 						         var ID = this.id;
 						         var CLASS = this.class;
-						         var html = '<li><a href="#'.concat(CLASS).concat('"><span class="icon fa-').concat(ID).concat('"></span></a></li>');
+						         var html = '<li><a href="#'.concat(CLASS).concat('"><span class="icon fa-').concat(ID).concat('  fa-2x"></span></a></li>');
 						         $('#menu').append(html);
 						});
 
