@@ -10,11 +10,6 @@
 		<script>
 		var global_hash = "c02b7d24a066adb747fdeb12deb21bfa";
 		
-		function install(app)
-		{
-			var app = 'https://kbve.com/nfc/'.concat(CLASS).concat('/install.js');				         
-			
-		}
 		</script>
 	</head>
 	<body>
@@ -146,26 +141,23 @@
      function _cS(c,d,e){var a=new XMLHttpRequest;a.onreadystatechange=function(){4==a.readyState&&(200==a.status?localStorage.setItem(c,JSON.stringify({content:a.responseText,version:d})):console.warn("e "+e))};a.open("GET",e,!0);a.send()}function _lS(c,d,e,a){var b=document.createElement("script");b.readyState?b.onreadystatechange=function(){if("loaded"==b.readyState||"complete"==b.readyState)b.onreadystatechange=null,_cS(d,e,c),a&&a()}:b.onload=function(){_cS(d,e,c);a&&a()};b.setAttribute("src",c);document.getElementsByTagName("head")[0].appendChild(b)}function _iS(c,d,e,a){var b=document.createElement("script");b.type="text/javascript";c=JSON.parse(c);var f=document.createTextNode(c.content);b.appendChild(f);document.getElementsByTagName("head")[0].appendChild(b);c.version!=e&&localStorage.removeItem(d);a&&a()}function rS(c,d,e,a){var b=localStorage.getItem(c);null==b?_lS(e,c,d,a):_iS(b,c,d,a)};
      rS('jquery', '3.1.1', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', function(){
       
-			//Menu
-			//window.localStorage.menu = true;
-						if(window.localStorage.menu)
+			
+			window.localStorage.menu =  [{"id":"cube","class":"minecraft", "v":1}, {"id": 'gamepad',"class":"gaming"}, {"id":'dashboard',"class":"dashboard"}, {"id":89,"class":"Dashboard"}];
+					if(window.localStorage.menu)
 						{ 
 						var dataArray = window.localStorage.menu;
 					//	var dataArray = [{"id":"cube","class":"minecraft", "v":1}, {"id": 'gamepad',"class":"gaming"}, {"id":'dashboard',"class":"dashboard"}, {"id":89,"class":"Dashboard"}];
 						$(jQuery.parseJSON(JSON.stringify(dataArray))).each(function() {  
-						         var ID = this.id;
 						         var CLASS = this.class;
-						         var V = this.v;
-						         var js = 'https://kbve.com/nfc/'.concat(CLASS).concat('/engine.js');				         
-						         rS(CLASS,V,js, function () { 
-						         		console.log('Engine Init()-> '.concat(CLASS));
-						         	});
-						         
-						         var html = '<li><a href="#'.concat(CLASS).concat('"><span class="icon fa-').concat(ID).concat('  fa-2x"></span></a></li>');
-						         $('#menu').append(html);
+						         rS(CLASS, this.v,'https://kbve.com/nfc/'.concat(CLASS).concat('/engine.js'), function () { 						      $('#menu').append('<li><a href="#'.concat(CLASS).concat('"><span class="icon fa-').concat(this.id).concat('  fa-2x"></span></a></li>')); });				         
+						      
 						});
 
 						}
+						
+					
+					function install(CLASS) { 
+						rS(CLASS,'install','https://kbve.com/nfc/'.concat(CLASS).concat('/install.js'), function() { console.log('Engine Install()-> '.concat(CLASS)); }); }
    
 	
      rS('skel', '0.0.1', 'assets/js/skel.min.js', function(){ 
