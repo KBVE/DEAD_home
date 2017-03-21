@@ -142,11 +142,11 @@
      rS('jquery', '3.1.1', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', function(){
       
 			
-			window.localStorage.menu =  [{"id":"cube","class":"minecraft", "v":1}, {"id": 'gamepad',"class":"gaming"}, {"id":'dashboard',"class":"dashboard"}, {"id":89,"class":"Dashboard"}];
+			window.localStorage.menu = '[{"id":"cube","class":"minecraft", "v":1}, {"id": "gamepad","class":"gaming"}, {"id":"dashboard","class":"dashboard"}, {"id":89,"class":"Dashboard"}]';
 					if(window.localStorage.menu)
 						{ 
-						//var dataArray = window.localStorage.menu;
-						var dataArray = [{"id":"cube","class":"minecraft", "v":1}, {"id": 'gamepad',"class":"gaming"}, {"id":'dashboard',"class":"dashboard"}, {"id":89,"class":"Dashboard"}];
+						var dataArray = window.localStorage.menu;
+						//var dataArray = [{"id":"cube","class":"minecraft", "v":1}, {"id": 'gamepad',"class":"gaming"}, {"id":'dashboard',"class":"dashboard"}, {"id":89,"class":"Dashboard"}];
 						$(jQuery.parseJSON(JSON.stringify(dataArray))).each(function() {  
 						         var CLASS = this.class;
 						         rS(CLASS, this.v,'https://kbve.com/nfc/'.concat(CLASS).concat('/engine.js'), function () { 						      $('#menu').append('<li><a href="#'.concat(CLASS).concat('"><span class="icon fa-').concat(this.id).concat('  fa-2x"></span></a></li>')); });				         
