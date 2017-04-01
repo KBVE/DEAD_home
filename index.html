@@ -1,37 +1,16 @@
-<!DOCTYPE HTML>
-
-<html>
-	<head>
-		<title>KBVE</title>
-		<meta charset="utf-8" />
+<!DOCTYPE HTML> <html>
+	<head> <title>KBVE</title> <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script>
-		var global_hash = "c02b7d24a066adb747fdeb12deb21bfa";
-		
-		</script>
-	</head>
-	<body>
-
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="icon fa-diamond"></span>
-							<!-- 
-							 Logo Here? Hmm
-							!-->
-						</div>
+		<script> var global_hash = "c02b7d24a066adb747fdeb12deb21bfa"; </script> </head>
+	
+	<body> 
+		<div id="wrapper">
+			<header id="header">
+				<div class="logo"> <span class="icon fa-diamond"></span> </div>
 						<div class="content">
-							<div class="inner">
-								<h1>KBVE</h1>
-								<p>
-									Uh, you dont belong here! Go away!
-								</p>
-							</div>
+							<div class="inner"><h1>KBVE</h1><p>Uh, you dont belong here! Go away!</p></div>
 						</div>
 						<nav>
 							<ul id="menu">
@@ -42,11 +21,8 @@
 							</ul>
 						</nav>
 					</header>
-
-				<!-- Main -->
 					<div id="main">
 
-						<!-- Intro -->
 							<article id="install">
 								<h2 class="major">Install</h2>
 							
@@ -92,7 +68,39 @@
 						<!-- Contact -->
 							<article id="login">
 								<h2 class="major">Login</h2>
-								<form method="post" action="#">
+								<form name="log" id="log" >
+									<div class="field half first">
+										<label for="name">Username</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">PassPhase</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="4"></textarea>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send Message" class="special" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+								<ul class="icons">
+									<!-- lol we don't have any of these 
+									<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li> -->
+									<li><a href="https://github.com/kbve-dev" class="icon fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+
+						<!-- Elements -->
+						
+								<!-- Contact -->
+							<article id="register">
+								<h2 class="major">Register</h2>
+								<form id="reg" name="reg" >
 									<div class="field half first">
 										<label for="name">Username</label>
 										<input type="text" name="name" id="name" />
@@ -145,11 +153,8 @@
 	function install(CLASS) { rS(CLASS,'install','https://kbve.com/nfc/'.concat(CLASS).concat('/install.js'), function() { console.log('Engine Install()-> '.concat(CLASS)); }); }
    
 	
-     rS('skel', '0.0.1', 'assets/js/skel.min.js', function(){ 
-
-            });
-     rS('util', '0.0.1', 'assets/js/util.js', function(){ 
-            }); 
+     rS('skel', '0.0.1', 'assets/js/skel.min.js', function(){  });
+     rS('util', '0.0.1', 'assets/js/util.js', function(){  }); 
     rS('main', '0.0.2', 'assets/js/main.js', function(){
     	
     	
