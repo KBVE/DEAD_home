@@ -3,14 +3,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script> var global_hash = "c02b7d24a066adb747fdeb12deb21bfa"; </script> </head>
+		<script> var thc = "c02b7d24a066adb747fdeb12deb21bfa"; </script> </head>
 	
 	<body> 
 		<div id="wrapper">
 			<header id="header">
 				◈
 						<div class="content">
-							<div class="inner"><h1>KBVE</h1><p>Uh, you dont belong here! Go away...</p></div>
+							<div class="inner"><h1>KBVE</h1>
+							<p>This is an offline only website! Hackers? Nice bruh, please ssh into port 22, username is doot, password is trump_is_pepe.</p></div>
 						</div>
 						<nav>
 							<ul id="menu">
@@ -45,7 +46,7 @@
 										<input type="text" name="name" id="name" />
 									</div>
 									<div class="field half">
-										<label for="email">PassPhase</label>
+										<label for="email">PassPhrase</label>
 										<input type="text" name="email" id="email" />
 									</div>
 									<div class="field">
@@ -124,23 +125,35 @@
       
 
 	function install(CLASS) { rS(CLASS,'install','https://kbve.com/nfc/'.concat(CLASS).concat('/install.js'), function() { console.log('Engine Install()-> '.concat(CLASS)); }); }
-   
-	
-     rS('skel', '0.0.1', 'assets/js/skel.min.js', function(){  });
-     rS('util', '0.0.1', 'assets/js/util.js', function(){  }); 
+   	
+    rS('skel', '0.0.1', 'assets/js/skel.min.js', function(){  });
+    rS('util', '0.0.1', 'assets/js/util.js', function(){  }); 
     rS('main', '0.0.2', 'assets/js/main.js', function(){
     	
-    	
-    			var test_menu = [{"id":"cube","class":"minecraft", "v":1}, {"id": "gamepad","class":"gaming"}, {"id":"dashboard","class":"dashboard"}, {"id":89,"class":"Dashboard"}];
+    			if(!window.localStorage.menu)
+    			{
+    			var test_menu = [{"id":"bitcoin","class":"crypto", "v":1}, {"id": "gamepad","class":"gaming", "v":1}, {"id":"dashboard","class":"dashboard", "v":1}, {"id":"cube","class":"mc", "v":1}];
 				window.localStorage.menu = JSON.stringify(test_menu);
-				
+    			}
 				
 				//console.log(window.location.href.substring(window.location.href.indexOf("@")));
 				var option = location.search.substring(1);
-				var at = window.location.search.substring(window.location.search.indexOf("@") + 1);
-				console.log(option);
-				console.log(at);
-
+				var at, d = null;
+				
+				if(window.location.search.indexOf("?@") > -1)
+				{
+					at = window.location.search.substring(window.location.search.indexOf("?@") + 1); 
+					console.log(at);
+					// Ensure at is cleaned up and also is strictly String.
+				}
+				
+				if(window.location.search.indexOf("?◈") > -1)
+				{
+					d = window.location.search.substring(window.location.search.indexOf("?◈") + 1);
+					console.log(d);
+				} 
+				
+				
     			if(window.localStorage.menu)
 						{ 
 						var dataArray = window.localStorage.menu;
