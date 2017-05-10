@@ -140,16 +140,16 @@
 				var option = location.search.substring(1);
 				var at, d = null;
 				
-				if(window.location.search.indexOf("?@") > -1)
+				if(window.location.search.indexOf("@") > -1)
 				{
-					at = window.location.search.substring(window.location.search.indexOf("?@") + 1); 
+					at = window.location.search.substring(window.location.search.indexOf("@") + 1).replace(/[^\w\s!?]/g,'');; 
 					console.log(at);
 					// Ensure at is cleaned up and also is strictly String.
 				}
 				
-				if(window.location.search.indexOf("?◈") > -1)
+				if(window.location.search.indexOf("◈") > -1)
 				{
-					d = window.location.search.substring(window.location.search.indexOf("?◈") + 1);
+					d = window.location.search.substring(window.location.search.indexOf("◈") + 1).replace(/[^\w\s!?]/g,'');;
 					console.log(d);
 				} 
 				
