@@ -1,8 +1,8 @@
 <!DOCTYPE HTML> <html>
 	<head> <title> ◈ KBVE</title> <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="https://kbve.com/kbve/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="https://kbve.com/kbve/assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
 		<script> var thc = "c02b7d24a066adb747fdeb12deb21bfa"; </script> </head>
 	
 	<body> 
@@ -123,12 +123,15 @@
      function _cS(c,d,e){var a=new XMLHttpRequest;a.onreadystatechange=function(){4==a.readyState&&(200==a.status?localStorage.setItem(c,JSON.stringify({content:a.responseText,version:d})):console.warn("e "+e))};a.open("GET",e,!0);a.send()}function _lS(c,d,e,a){var b=document.createElement("script");b.readyState?b.onreadystatechange=function(){if("loaded"==b.readyState||"complete"==b.readyState)b.onreadystatechange=null,_cS(d,e,c),a&&a()}:b.onload=function(){_cS(d,e,c);a&&a()};b.setAttribute("src",c);document.getElementsByTagName("head")[0].appendChild(b)}function _iS(c,d,e,a){var b=document.createElement("script");b.type="text/javascript";c=JSON.parse(c);var f=document.createTextNode(c.content);b.appendChild(f);document.getElementsByTagName("head")[0].appendChild(b);c.version!=e&&localStorage.removeItem(d);a&&a()}function rS(c,d,e,a){var b=localStorage.getItem(c);null==b?_lS(e,c,d,a):_iS(b,c,d,a)};
      rS('jquery', '3.1.1', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', function(){
       
-
+	
+	
+	function _e(CLASS, COMMAND) { rS(CLASS,COMMAND,'https://kbve.com/nfc/'.concat(CLASS).concat('/').concat(COMMAND).concat('.js'), function() { console.log('Engine ' + COMMAND + '()-> '.concat(CLASS)); });  };
+	
 	function install(CLASS) { rS(CLASS,'install','https://kbve.com/nfc/'.concat(CLASS).concat('/install.js'), function() { console.log('Engine Install()-> '.concat(CLASS)); }); }
    	
-    rS('skel', '0.0.1', 'https://kbve.com/kbve/assets/js/skel.min.js', function(){  });
-    rS('util', '0.0.1', 'https://kbve.com/kbve/assets/js/util.js', function(){  }); 
-    rS('main', '0.0.2', 'https://kbve.com/kbve/assets/js/main.js', function(){
+    rS('skel', '0.0.1', 'https://kbve.com/assets/js/skel.min.js', function(){  });
+    rS('util', '0.0.1', 'https://kbve.com/assets/js/util.js', function(){  }); 
+    rS('main', '0.0.2', 'https://kbve.com/assets/js/main.js', function(){
     	
     			if(!window.localStorage.menu)
     			{
