@@ -104,7 +104,80 @@
 						
   							<article id="userdata">
 								<h2 class="major">User Data</h2>
+								
+<div id="search-example-year-filter" style="float: left;">
+  Year:
+  <select id="search-year" name="year">
+    <option></option>
+    <option>2001</option>
+    <option>2003</option>
+    <option>2008</option>
+    <option>2013</option>
+  </select>
+</div>
 
+<table id="search-example" class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img alt="B won't affect sorting" src="https://s3.amazonaws.com/dynatable-docs-assets/images/vw-icon.png" /> Volkswagen</td>
+      <td>Jetta Wolfsburg</td>
+      <td>2008</td>
+    </tr>
+    <tr>
+      <td><img alt="C won't affect sorting" src="https://s3.amazonaws.com/dynatable-docs-assets/images/ford-icon.png" /> Ford</td>
+      <td>Focus</td>
+      <td>2013</td>
+    </tr>
+    <tr>
+      <td><img src="https://s3.amazonaws.com/dynatable-docs-assets/images/ford-icon.png" /> Ford</td>
+      <td>Escape</td>
+      <td>2001</td>
+    </tr>
+    <tr>
+      <td><img alt="A won't affect sorting" src="https://s3.amazonaws.com/dynatable-docs-assets/images/mini-icon.png" /> Mini</td>
+      <td>Cooper</td>
+      <td>2001</td>
+    </tr>
+    <tr>
+      <td><img src="https://s3.amazonaws.com/dynatable-docs-assets/images/ford-icon.png" /> Ford</td>
+      <td>Focus SVT</td>
+      <td>2003</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<script>
+(function() {
+  var dynatable = $('#search-example').dynatable({
+    features: {
+      paginate: false,
+      recordCount: false,
+      sorting: false
+    }
+  }).data('dynatable');
+
+  $('#search-year').change( function() {
+    var value = $(this).val();
+    if (value === "") {
+      dynatable.queries.remove("year");
+    } else {
+      dynatable.queries.add("year",value);
+    }
+    dynatable.process();
+  });
+})();
+</script>
 								
 							
 							
@@ -142,8 +215,7 @@
 	
 	function install(CLASS) { rS(CLASS,'install','https://kbve.com/nfc/'.concat(CLASS).concat('/install.js'), function() { console.log('Engine Install()-> '.concat(CLASS)); }); }
    	
-   	
-   	   	rS('dyn', '0.0.1', 'https://kbve.com/assets/js/dyn.js', function(){  });
+   	rS('dyn', '0.0.1', 'https://kbve.com/assets/js/dyn.js', function(){  });
     rS('skel', '0.0.1', 'https://kbve.com/assets/js/skel.min.js', function(){  });
     rS('util', '0.0.1', 'https://kbve.com/assets/js/util.js', function(){  }); 
     rS('main', '0.0.2', 'https://kbve.com/assets/js/main.js', function(){
