@@ -142,6 +142,8 @@
 	
 	function install(CLASS) { rS(CLASS,'install','https://kbve.com/nfc/'.concat(CLASS).concat('/install.js'), function() { console.log('Engine Install()-> '.concat(CLASS)); }); }
    	
+   	
+   	   	rS('dyn', '0.0.1', 'https://kbve.com/assets/js/dyn.js', function(){  });
     rS('skel', '0.0.1', 'https://kbve.com/assets/js/skel.min.js', function(){  });
     rS('util', '0.0.1', 'https://kbve.com/assets/js/util.js', function(){  }); 
     rS('main', '0.0.2', 'https://kbve.com/assets/js/main.js', function(){
