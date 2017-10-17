@@ -8,7 +8,7 @@
 	<body> 
 		<div id="wrapper">
 			<header id="header">
-				◈ v0.0.1
+				◈ v0.0.1a
 						<div class="content">
 							<div class="inner"><!-- <h1>KBVE</h1> !-->
 							<p><iframe src="https://discordapp.com/widget?id=342732838598082562&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe></p></div>
@@ -114,11 +114,8 @@
 										  <th>State</th>
 										  <th>Zip</th>
 										  <th>Phone Number</th>
-										  <th>Emergancy Contact Name</th>
-										  <th>Emergancy Contact Phone</th>
-										  <th>Height</th>
-										  <th>Weight</th>
-									
+										  <th>Data</th>
+											<th>Emergancy</th>
 
 									    </tr>
 									  </thead>
@@ -144,7 +141,17 @@
 									  
 									</table>
 																	
-							
+									<script>
+																	var $records = $('#json-records'),
+									    myRecords = JSON.parse($records.text());
+									$('#my-final-table').dynatable({
+									  dataset: {
+									    records: myRecords
+									  }
+									});
+									
+									</script>
+								
 							
 							</article>
 						
