@@ -273,8 +273,9 @@
         
         
         
-        							var $records = $('#json-records'),
-									    myRecords = JSON.parse($records.text());
+        							var $records = $('#json-records');
+									 var myRecords = JSON.parse($records.text());
+									 
 									$('#my-final-table').dynatable({
 									  dataset: {
 									    records: myRecords
