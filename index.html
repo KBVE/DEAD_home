@@ -85,8 +85,8 @@
 									</div>
 									
 									<div class="field half">
-										<label for="invite_code">Invite Code</label>
-										<input type="text" name="invite_code" id="invite_code" />
+										<label for="invite">Invite Code</label>
+										<input type="text" name="invite" id="invite" />
 									</div>
 									
 									<ul class="actions">
@@ -263,7 +263,7 @@
 				if(window.location.href.indexOf("@") > -1)
 				{
 					at = window.location.href.substring(window.location.href.indexOf("@") + 1).replace(/[^\w\s!?]/g,'');
-										document.getElementById('invite_code').value = at.replace('register', '');
+										document.getElementById('invite').value = at.replace('register', '');
 					console.log(at);
 					// Ensure at is cleaned up and also is strictly String.
 				}
