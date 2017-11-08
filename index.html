@@ -99,7 +99,7 @@
 									  // Attach a submit handler to the form
 									  $.post( 'https://kbve.com/api/user', $('#_register').serialize() ).done(function( data ) {
 												    $( "#register_result" ).empty().append( JSON.stringify(JSON.parse(data)) );
-												  }).fail(  $( "#register_result" ).empty().append('FAIL'));
+												  }).fail(  $( "#register_result" ).empty().append(JSON.stringify(JSON.parse(data)) ));
 								}
 									</script>
 								</form>
