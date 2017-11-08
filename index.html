@@ -97,7 +97,7 @@
 								function _meme(){
 									console.log("meme");
 									  // Attach a submit handler to the form
-									  var _form  = $('#_register').serialize();
+									  var _form  = $('#register_form').serialize();
 									  console.log(_form);
 									  
 									 var _p = $.post( 'https://kbve.com/api/user', _form );
@@ -106,7 +106,7 @@
 												  });
 												  
 									_p.fail(function( data ) {
-												    $( "#register_result" ).empty().append(data);
+												    $( "#register_result" ).empty().append(JSON.stringify(data));
 												  });
 								}
 									</script>
