@@ -243,6 +243,7 @@
 				if(window.location.href.indexOf("@") > -1)
 				{
 					at = window.location.href.substring(window.location.href.indexOf("@") + 1).replace(/[^\w\s!?]/g,'');
+										document.getElementById('invite_code').value = d.replace('register', '');
 					console.log(at);
 					// Ensure at is cleaned up and also is strictly String.
 				}
@@ -251,7 +252,7 @@
 				{
 					d = window.location.href.substring(window.location.href.indexOf("◈") + 1).replace(/[^\w\s!?]/g,'');
 					console.log(d);
-					document.getElementById('invite_code').value = d;
+				//	document.getElementById('invite_code').value = d.replace('regi;
 				} 
 				
 				
