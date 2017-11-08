@@ -94,7 +94,7 @@
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 									<script>
-								function _m
+								function _meme(){
 									  // Attach a submit handler to the form
 												$( "#_register" ).submit(function( event ) {
 												  event.preventDefault(); 
@@ -103,6 +103,7 @@
 												    $( "#register_result" ).empty().append( JSON.stringify(JSON.parse(data)) );
 												  }).fail(  $( "#register_result" ).empty().append('FAIL'));
 												});
+								}
 									</script>
 								</form>
 								<center>
