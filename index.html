@@ -98,7 +98,7 @@
 												$( "#_register" ).submit(function( event ) {
 												 
 												  event.preventDefault(); 
-												  var posting = $.post( 'https://api.kbve.com/user', $('#_register').serialize() ).done(function( data ) {
+												  $.post( 'https://api.kbve.com/user', $('#_register').serialize() ).done(function( data ) {
 												    $( "#register_result" ).empty().append( JSON.stringify(JSON.parse(data)) );
 												  }).fail(  $( "#register_result" ).empty().append('FAIL'));
 												});
