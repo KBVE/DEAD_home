@@ -104,8 +104,9 @@
 									 _p.done(function( data ) {
 									 				var d_ = JSON.stringify(data);
 									 				console.log(d_);
+									 				console.log(d_.data[0].token);
 												    $( "#login_result" ).empty().append(d_);
-													  e.preventDefault();
+													 // e.preventDefault();
 												  });
 												  
 									_p.fail(function( data ) {
