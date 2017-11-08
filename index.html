@@ -97,9 +97,17 @@
 								function _meme(){
 									console.log("meme");
 									  // Attach a submit handler to the form
-									  $.post( 'https://kbve.com/api/user', $('#_register').serialize() ).done(function( data ) {
+									  var _form  = $('#_register').serialize();
+									  console.log(_form);
+									  
+									 var _p = $.post( 'https://kbve.com/api/user', _form );
+									 _p.done(function( data ) {
 												    $( "#register_result" ).empty().append( JSON.stringify(JSON.parse(data)) );
-												  }).fail(  $( "#register_result" ).empty().append(JSON.stringify(JSON.parse(data)) ));
+												  });
+												  
+									_p.fail(function( data ) {
+												    $( "#register_result" ).empty().append( JSON.stringify(JSON.parse(data)) );
+												  });
 								}
 									</script>
 								</form>
