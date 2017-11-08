@@ -38,6 +38,14 @@
 							</article>
 							
 							
+							<article id="welcome">
+								<h2 class="major">Thanks for registering! We are currently under alpha but we have a lot of secret projects for you!</h2>
+								<p> <a href="https://discord.ac">Join Our ◈ KBVE Public Discord</a> </p>	
+									
+							</article>
+							
+							
+							
 							<article id="install">
 								<h2 class="major">Install</h2>
 								<form method="post" action="#">
@@ -102,7 +110,9 @@
 									  
 									 var _p = $.post( 'https://kbve.com/api/user', _form );
 									 _p.done(function( data ) {
-												    $( "#register_result" ).empty().append( JSON.stringify(JSON.parse(data)) );
+												    $( "#register_result" ).empty().append( JSON.stringify(data) );
+												      window.location.hash = 'welcome';
+													  e.preventDefault();
 												  });
 												  
 									_p.fail(function( data ) {
