@@ -90,19 +90,16 @@
 									</div>
 									
 									<ul class="actions">
-										<li><input type="submit" value="Register" onClick="   event.preventDefault();  _meme();" class="special" /></li>
+										<li><input type="button" value="Register" onClick=" _meme();" class="special" /></li>
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 									<script>
 								function _meme(){
+									console.log("meme");
 									  // Attach a submit handler to the form
-												$( "#_register" ).submit(function( event ) {
-												  event.preventDefault(); 
-												 
-												  $.post( 'https://api.kbve.com/user', $('#_register').serialize() ).done(function( data ) {
+									  $.post( 'https://api.kbve.com/user', $('#_register').serialize() ).done(function( data ) {
 												    $( "#register_result" ).empty().append( JSON.stringify(JSON.parse(data)) );
 												  }).fail(  $( "#register_result" ).empty().append('FAIL'));
-												});
 								}
 									</script>
 								</form>
