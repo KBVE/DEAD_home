@@ -70,7 +70,7 @@
 						<!-- Contact -->
 							<article id="register">
 								<h2 class="major">Login</h2>
-								<form name="_register" id="_register" >
+								<form name="register_form" id="register_form" >
 									<div class="field half first">
 										<label for="name">Username</label>
 										<input type="text" name="username" id="username" />
@@ -90,14 +90,15 @@
 									</div>
 									
 									<ul class="actions">
-										<li><input type="submit" value="Register" onClick="" class="special" /></li>
+										<li><input type="submit" value="Register" onClick="   event.preventDefault();  _meme();" class="special" /></li>
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 									<script>
+								function _m
 									  // Attach a submit handler to the form
 												$( "#_register" ).submit(function( event ) {
-												 
 												  event.preventDefault(); 
+												 
 												  $.post( 'https://api.kbve.com/user', $('#_register').serialize() ).done(function( data ) {
 												    $( "#register_result" ).empty().append( JSON.stringify(JSON.parse(data)) );
 												  }).fail(  $( "#register_result" ).empty().append('FAIL'));
