@@ -1,8 +1,8 @@
 <!DOCTYPE HTML> <html>
 	<head> <title> ◈ KBVE</title> <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://kbve.com/home/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="https://kbve.com/home/assets/css/noscript.css" /></noscript>
 		<script> var thc = "c02b7d24a066adb747fdeb12deb21bfa"; </script> </head>
 	
 	<body> 
@@ -15,7 +15,7 @@
 						</div>
 						<nav>
 							<ul id="menu">
-								<li><a href="#intro">Install</a></li>
+								<li><a href="#install">Install</a></li>
 								 <li><a href="#chat">Chat</a></li>
 								<li><a href="#login">Login</a></li>
 								<br />
@@ -45,34 +45,14 @@
 							</article>
 							
 							
-							
-							<article id="install">
-								<h2 class="major">Install</h2>
-								<form method="post" action="#">
-									<div class="field half first">
-										<label for="name">Username</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field half">
-										<label for="email">PassPhrase</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="special" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
+							<article id="account">
+								<h2 class="major">Thanks for registering! We are currently under alpha but we have a lot of secret projects for you!</h2>
+								<p> <a href="https://discord.ac">Join Our ◈ KBVE Public Discord</a> </p>	
+									
 							</article>
+							
+							
+							
 							
 							
 													<!-- Contact -->
@@ -94,6 +74,49 @@
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 									<script>
+									
+									
+									
+									function _form_api( state , resource) {
+										
+										console.log('Processing Resource: ' + resource + ' => Towards ' + state );
+										
+										var _form_data = $(state + '_form').serialze();
+										var _p = $.post( 'https://kbve.com/api/' + state , _form );
+										
+										_p.done(function( data ) {
+									 				var d_ = JSON.stringify(data);
+									 				console.log(d_);
+									 				console.log(data.data.token);
+									 				localStroage.user_id = data.data.user_id;
+									 				localStorage.username = data.data.username;
+									 				localStorage.user_data = data.data;
+									 				localStorage.token = data.data.token;
+												  //  $( "#login_result" ).empty().append(d_);
+												  
+											//		var els = document.getElementsByClassName("user_data");
+										//			var els = document.getElementById('main').getElementsByClassName('test');
+/**
+											    [].forEach.call(els, function (el) {
+											    	
+												    	console.log(el.value);
+												    	
+												    	
+												    	});
+													 // e.preventDefault();
+												  
+**/											  
+										});
+										_p.fail(function( data ) {
+													    $( "#login_result" ).empty().append(JSON.stringify(data));
+													  });
+										
+										
+									}
+									
+									
+									
+									
 								function _login(){
 									console.log("login");
 									  // Attach a submit handler to the form
@@ -105,7 +128,21 @@
 									 				var d_ = JSON.stringify(data);
 									 				console.log(d_);
 									 				console.log(data.data.token);
-												    $( "#login_result" ).empty().append(d_);
+									 				localStroage.user_id = data.data.user_id;
+									 				localStorage.username = data.data.username;
+									 				localStorage.user_data = data.data;
+									 				localStorage.token = data.data.token;
+												  //  $( "#login_result" ).empty().append(d_);
+													els = data.data;
+											//		var els = document.getElementsByClassName("user_data");
+										//			var els = document.getElementById('main').getElementsByClassName('test');
+
+												    [].forEach.call(els, function (el) {
+											    	
+												    	console.log(el.value);
+												    	
+												    	
+												    	});
 													 // e.preventDefault();
 												  });
 												  
@@ -189,64 +226,76 @@
 						<!-- Elements -->
 						
 
+								<article id="account">
+								<h2 class="major">Account</h2>
+								<br />
+																<div id="account_result"></div>
+								<form name="account_form" id="account_form" >
+									<div class="field half first">
+										<label for="name">Username</label>
+										<input type="text" name="username" id="username" />
+									</div>
+									<div class="field half">
+										<label for="email">Password</label>
+										<input type="password" name="password" id="password" />
+									</div>
+									<div class="field half first">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									
+									<div class="field half">
+										<label for="invite">Invite Code</label>
+										<input type="text" name="invite" id="invite" />
+									</div>
+									
+									<ul class="actions">
+										<li><input type="button" value="Fetch" onClick=" _meme();" class="special" /></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+									<script>
+								function _meme(){
+									console.log("meme");
+									
+									  // Attach a submit handler to the form
+									  var _form  = $('#account_form').serialize();
+									  console.log(_form);
+									  
+									 var _p = $.post( 'https://kbve.com/api/user/'+localStorage.username, _form );
+									 _p.done(function( data ) {
+												    $( "#account_result" ).empty().append( JSON.stringify(data) );
+												      window.location.hash = 'welcome';
+													  e.preventDefault();
+												  });
+												  
+									_p.fail(function( data ) {
+												    $( "#account_result" ).empty().append(JSON.stringify(data));
+												  });
+								}
+									</script>
+								</form>
+								<center>
+								</center>
+								<ul class="icons">
+									<!-- lol we don't have any of these 
+									<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li> -->
+									<li><a href="https://github.com/kbve-dev" class="icon fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+
+						<!-- Elements -->
+
+
+
+
 
 
 						<!-- Elements -->
 						
 						
-						
-						<!-- UserData -->
-						
-  							<article id="userdata">
-								<h2 class="major">User Data</h2>
-																	<table>
-									  <thead>
-									    <tr>
-									      <th>First Name</th>
-									      <th>Second Name</th>
-									      <th>Address</th>
-										  <th>City</th>
-										  <th>State</th>
-										  <th>Zip</th>
-										  <th>Phone Number</th>
-										  <th>Data</th>
-											<th>Emergancy</th>
-
-									    </tr>
-									  </thead>
-									 
-									  <tbody>
-									    <tr>
-									      <td>Fred</td>
-									      <td>Roller Skating</td>
-									      <td>Disco</td>
-									    </tr>
-									    <tr>
-									      <td>Helen</td>
-									      <td>Rock Climbing</td>
-									      <td>Alternative</td>
-									    </tr>
-									    <tr>
-									      <td>Glen</td>
-									      <td>Traveling</td>
-									      <td>Classical</td>
-									    </tr>
-									  </tbody>
-									  
-									  
-									</table>
-																	
-									<script>
-									
-									
-									</script>
-								
-							
-							</article>
-						
-						
-								<!-- Contact -->
-
+				
 
 						<!-- Elements -->
 						
@@ -276,10 +325,10 @@
 	
 	function install(CLASS) { rS(CLASS,'install','https://kbve.com/nfc/'.concat(CLASS).concat('/install.js'), function() { console.log('Engine Install()-> '.concat(CLASS)); }); }
    	
-   	rS('dyn', '0.0.1', 'https://kbve.com/assets/js/dyn.js', function(){  });
-    rS('skel', '0.0.1', 'https://kbve.com/assets/js/skel.min.js', function(){  });
-    rS('util', '0.0.1', 'https://kbve.com/assets/js/util.js', function(){  }); 
-    rS('main', '0.0.2', 'https://kbve.com/assets/js/main.js', function(){
+   	rS('dyn', '0.0.1', 'https://kbve.com/home/assets/js/dyn.js', function(){  });
+    rS('skel', '0.0.1', 'https://kbve.com/home/assets/js/skel.min.js', function(){  });
+    rS('util', '0.0.1', 'https://kbve.com/home/assets/js/util.js', function(){  }); 
+    rS('main', '0.0.2', 'https://kbve.com/home/assets/js/main.js', function(){
     	
     			if(!window.localStorage.menu)
     			{
