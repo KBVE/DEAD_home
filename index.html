@@ -88,7 +88,7 @@
 									 				var d_ = JSON.stringify(data);
 									 				console.log(d_);
 									 				console.log(data.data.token);
-									 				localStroage.user_id = data.data.user_id;
+									 				localStorage.user_id = data.data.user_id;
 									 				localStorage.username = data.data.username;
 									 				localStorage.user_data = data.data;
 									 				localStorage.token = data.data.token;
@@ -128,15 +128,15 @@
 									 				var d_ = JSON.stringify(data);
 									 				console.log(d_);
 									 				console.log(data.data.token);
-									 				localStroage.user_id = data.data.user_id;
+									 				localStorage.user_id = data.data.user_id;
 									 				localStorage.username = data.data.username;
 									 				localStorage.user_data = data.data;
 									 				localStorage.token = data.data.token;
-												  //  $( "#login_result" ).empty().append(d_);
+													 $( "#login_result" ).empty().append(d_);
 													els = data.data;
 											//		var els = document.getElementsByClassName("user_data");
 										//			var els = document.getElementById('main').getElementsByClassName('test');
-
+									
 												    [].forEach.call(els, function (el) {
 											    	
 												    	console.log(el.value);
